@@ -27,7 +27,6 @@ jobs:
 
       - name: Install Beego and dependencies
         run: |
-#          go get -u github.com/beego/beego/v2
           go install github.com/beego/beego/v2
           go install github.com/beego/bee@latest
 ## we will update or install dependency through dep later
