@@ -42,11 +42,27 @@ jobs:
       - name: Install dependencies
         run: |
           go mod tidy
+      - name: test
+        run: go test ./...
+
       - name: build
         run: go build -o testCiCd
 
-      - name: test
-        run: go test ./...
+      - name: copy to server
+        run: |
+          echo "${{secrets.KEY}}" > private_key && chmod 600 private_key
+          scp -o StrictHostKeyChecking=no -i private_key ./dist/${{env.APP_NAME}}/browser/${{env.APP_NAME}}.zip ${{env.USER_NAME}}@${{env.HOST_NAME}}:${{env.SERVER_ROOT_DIRECTORY}}
+#
+#      - name: Copy built binary to server via SSH
+#        uses: appleboy/scp-action@master
+#        with:
+#          host: ${{ secrets.HOST }}
+#          username: ${{ secrets.USER }}
+#          password: ${{ secrets.KEY }}
+#          source: ./app
+#          target: /path/to/deploy/directory/
+
+
 #
 ##
 ##  # build the executable file as then name testCiCd
@@ -65,4 +81,3 @@ jobs:
 #      #    - name: Install dependencies
 #      #      run: |
 #      #        go mod download github.com/smartystreets/goconvey
-
