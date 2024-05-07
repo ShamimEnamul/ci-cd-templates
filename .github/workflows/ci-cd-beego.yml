@@ -1,5 +1,5 @@
-name: learn golang deployment
-run-name: ${{github.actor}} is learning Github Actions
+name: golang ci/cd
+run-name: learning Github Actions for beego framework
 
 on:
   push:
