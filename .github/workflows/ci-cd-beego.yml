@@ -51,7 +51,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Install dependencies
-      run: |
-        go mod download github.com/smartystreets/goconvey
+#    - name: Install dependencies
+#      run: |
+#        go mod download github.com/smartystreets/goconvey
     - name: test
+      run: go test ./...
