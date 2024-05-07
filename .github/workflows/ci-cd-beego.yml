@@ -29,12 +29,12 @@ jobs:
         run: |
           go get -u github.com/beego/beego/v2
           go install github.com/beego/bee@latest
-
-      - name: Install dep
-        run: go get -u github.com/golang/dep/cmd/dep
+# we will update or install dependency through dep later
+#      - name: Install dep
+#        run: go get -v github.com/golang/dep/cmd/dep
+#
+#      - name: Install dependencies
+#        run: dep ensure
 
       - name: Install dependencies
-        run: dep ensure
-
-#      - name: Install dependencies
-#        run: go mod tidy
+        run: go mod tidy
