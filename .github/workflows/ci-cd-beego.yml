@@ -25,10 +25,10 @@ jobs:
       - name: Check Go version
         run: go version
 
-#      - name: Install Beego and dependencies
-#        run: |
-#          go get -u github.com/beego/beego/v2
-#          go install github.com/beego/bee@latest
+      - name: Install Beego and dependencies
+        run: |
+          go get -u github.com/beego/beego/v2
+          go install github.com/beego/bee@latest
 ## we will update or install dependency through dep later
 ##      - name: Install dep
 ##        run: go get -v github.com/golang/dep/cmd/dep
