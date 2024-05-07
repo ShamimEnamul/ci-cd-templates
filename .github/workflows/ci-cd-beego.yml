@@ -27,8 +27,11 @@ jobs:
 
       - name: Install Beego and dependencies
         run: |
-          go install github.com/beego/beego/v2
+          go install github.com/beego/beego/v2  
           go install github.com/beego/bee@latest
+
+#          go get -u github.com/beego/beego/v2 // use this in different purpose read later
+
 ## we will update or install dependency through dep later
 ##      - name: Install dep
 ##        run: go get -v github.com/golang/dep/cmd/dep
@@ -52,12 +55,12 @@ jobs:
 ##  #      - name: run
 ##  #        run: bee run
 #
-#  test:
-#    runs-on: ubuntu-latest
-#
-#    steps:
-#      #    - name: Install dependencies
-#      #      run: |
-#      #        go mod download github.com/smartystreets/goconvey
-#      - name: test
-#        run: go test ./...
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      #    - name: Install dependencies
+      #      run: |
+      #        go mod download github.com/smartystreets/goconvey
+      - name: test
+        run: go test ./...
