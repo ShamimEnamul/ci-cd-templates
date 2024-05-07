@@ -43,7 +43,10 @@ jobs:
         run: |
           go mod tidy
       - name: build
-        run: go build
+        run: go build -o testCiCd
+
+      - name: test
+        run: go test ./...
 #
 ##
 ##  # build the executable file as then name testCiCd
@@ -55,12 +58,11 @@ jobs:
 ##  #      - name: run
 ##  #        run: bee run
 #
-  test:
-    runs-on: ubuntu-latest
+#  test:
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      #    - name: Install dependencies
+#      #      run: |
+#      #        go mod download github.com/smartystreets/goconvey
 
-    steps:
-      #    - name: Install dependencies
-      #      run: |
-      #        go mod download github.com/smartystreets/goconvey
-      - name: test
-        run: go test ./...
