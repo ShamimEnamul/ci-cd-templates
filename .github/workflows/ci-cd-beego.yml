@@ -43,7 +43,7 @@ jobs:
         run: |
           go mod tidy
       - name: build
-        run: go build -o testCiCd
+        run: go build
 #
 ##
 ##  # build the executable file as then name testCiCd
