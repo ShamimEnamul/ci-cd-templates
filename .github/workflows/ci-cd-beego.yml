@@ -38,6 +38,11 @@ jobs:
 
       - name: Install dependencies
         run: go mod tidy
-
+  # build the executable file as then name testCiCd
+  build:
+      runs-on: ubuntu-latest
+      steps:
       - name: build
-        run: bee run
+        run: go build -o testCiCd
+#      - name: run
+#        run: bee run
