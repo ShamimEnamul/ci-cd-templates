@@ -9,7 +9,7 @@ on:
     branches:
       - main
 jobs:
-  setup:
+  setup and build:
     runs-on: ubuntu-latest
 
     steps:
@@ -39,9 +39,11 @@ jobs:
       - name: Install dependencies
         run: | 
           go mod tidy
-          go build
-
-  # build the executable file as then name testCiCd
+      - name: build
+        run: go build
+  
+#
+#  # build the executable file as then name testCiCd
 #  build:
 #    runs-on: ubuntu-latest
 #    steps:
@@ -49,13 +51,13 @@ jobs:
 #        run: go build #-o testCiCd
 #  #      - name: run
 #  #        run: bee run
-#
-#  test:
-#    runs-on: ubuntu-latest
-#
-#    steps:
-#      #    - name: Install dependencies
-#      #      run: |
-#      #        go mod download github.com/smartystreets/goconvey
-#      - name: test
-#        run: go test ./...
+
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      #    - name: Install dependencies
+      #      run: |
+      #        go mod download github.com/smartystreets/goconvey
+      - name: test
+        run: go test ./...
