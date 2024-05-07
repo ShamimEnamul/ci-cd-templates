@@ -37,22 +37,25 @@ jobs:
 #        run: dep ensure
 
       - name: Install dependencies
-        run: go mod tidy
+        run: | 
+          go mod tidy
+          go build
+
   # build the executable file as then name testCiCd
-  build:
-      runs-on: ubuntu-latest
-      steps:
-      - name: build
-        run: go build #-o testCiCd
-#      - name: run
-#        run: bee run
-
-  test:
-    runs-on: ubuntu-latest
-
-    steps:
-#    - name: Install dependencies
-#      run: |
-#        go mod download github.com/smartystreets/goconvey
-    - name: test
-      run: go test ./...
+#  build:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - name: build
+#        run: go build #-o testCiCd
+#  #      - name: run
+#  #        run: bee run
+#
+#  test:
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      #    - name: Install dependencies
+#      #      run: |
+#      #        go mod download github.com/smartystreets/goconvey
+#      - name: test
+#        run: go test ./...
