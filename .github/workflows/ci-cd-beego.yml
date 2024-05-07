@@ -1,4 +1,4 @@
-name: learn-ci-docker
+name: learn golang deployment
 run-name: ${{github.actor}} is learning Github Actions
 
 on:
@@ -17,6 +17,18 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Set Up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+  build1:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set Up Node.js 2222
         uses: actions/setup-node@v4
         with:
           node-version: 20
