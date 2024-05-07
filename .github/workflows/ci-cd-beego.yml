@@ -38,3 +38,6 @@ jobs:
 
       - name: Install dependencies
         run: go mod tidy
+
+      - name: build
+        run: bee run
