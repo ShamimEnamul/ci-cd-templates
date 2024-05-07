@@ -43,7 +43,7 @@ jobs:
       runs-on: ubuntu-latest
       steps:
       - name: build
-        run: go build -o testCiCd
+        run: go build #-o testCiCd
 #      - name: run
 #        run: bee run
 
