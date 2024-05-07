@@ -23,7 +23,7 @@ jobs:
 #          check-latest: true
 
       - name: version
-      - run: go version
+        run: go version
 
 #      - name: Check Go version
 #      - run: go version
