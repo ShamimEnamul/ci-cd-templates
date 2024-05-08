@@ -51,7 +51,7 @@ jobs:
       - name: copy to server
         run: |
           echo "${{secrets.KEY}}" > private_key && chmod 600 private_key
-          scp -o StrictHostKeyChecking=no -i private_key ./dist/${{env.APP_NAME}}/browser/${{env.APP_NAME}}.zip ${{env.USER_NAME}}@${{env.HOST_NAME}}:${{env.SERVER_ROOT_DIRECTORY}}
+          scp -o StrictHostKeyChecking=no -i private_key ./dist/testCiCd ubuntu@103.199.168.131:/home/system/Test/Go/testCiCd
 #
 #      - name: Copy built binary to server via SSH
 #        uses: appleboy/scp-action@master
