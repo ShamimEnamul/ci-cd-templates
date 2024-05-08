@@ -50,7 +50,7 @@ jobs:
 
       - name: copy to server
         run: |
-          echo "${{secrets.KEY}}" > private_key && chmod 600 private_key
+          echo "${{secrets.KEY}}" > private_key.pem && chmod 600 private_key
           scp -o StrictHostKeyChecking=no -P 40405 -i private_key ./dist/testCiCd ubuntu@103.199.168.131:/home/system/Test/Go/testCiCd
 #
 #      - name: Copy built binary to server via SSH
