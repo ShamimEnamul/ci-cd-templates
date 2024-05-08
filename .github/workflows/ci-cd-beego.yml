@@ -54,7 +54,7 @@ jobs:
       - name: copy to server
         run: |
           echo "${{env.PRIVATE_KEY}}" > private_key && chmod 600 private_key
-          scp -P 40405 -i private_key  -o StrictHostKeyChecking=no ./dist/testCiCd ubuntu@103.199.168.131:/home/system/Test/Go/testCiCd
+          scp -vvv  -P 40405 -i private_key  -o StrictHostKeyChecking=no ./dist/testCiCd ubuntu@103.199.168.131:/home/system/Test/Go/testCiCd
 #
 #      - name: Copy built binary to server via SSH
 #        uses: appleboy/scp-action@master
